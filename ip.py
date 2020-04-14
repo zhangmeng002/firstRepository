@@ -22,7 +22,7 @@ def get_ip_list():
         data = requests.get(link,headers=headers).text
         soup = BeautifulSoup(data,'lxml')
         ips = soup.find_all('tr')
-        # print(len(ips))
+
         for x in range(1,len(ips)):
             d = ips[x].find_all('td')
             ip = d[0].text
